@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,30 +14,40 @@
             padding: 40px 20px;
             text-align: center;
         }
+
         h1 {
             color: #d27d2d;
             font-size: 28px;
             margin-bottom: 10px;
         }
+
         .subtitle {
             font-size: 16px;
             color: #8c7662;
             margin-bottom: 40px;
         }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            display: block; /* WeasyPrint互換のためblock構成 */
+            display: block;
+            /* WeasyPrint互換のためblock構成 */
         }
+
         /* 各世代・グループごとのブロック */
         .family-section {
             background: #ffffff;
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             overflow: hidden;
+
+            /* 【修正】セクションの途中で改ページされるのを防ぐ */
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
+
         .section-title {
             font-size: 20px;
             color: #b85c00;
@@ -46,12 +57,21 @@
             margin-bottom: 20px;
             text-align: left;
         }
+
         /* 猫カードを横並びにするためのテーブルレイアウト */
         .cat-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 15px;
         }
+
+        /* 【修正】テーブルの行やセルも途中で切れないように指定 */
+        .cat-table tr,
+        .cat-table td {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
         .cat-card {
             background: #fffdfa;
             border: 1px solid #eedecf;
@@ -59,22 +79,30 @@
             padding: 15px;
             text-align: center;
             vertical-align: top;
-            width: 25%; /* 4列を基準 */
+            width: 25%;
+            /* 4列を基準 */
         }
+
         .cat-card img {
             width: 100%;
             height: auto;
             max-height: 180px;
             object-fit: cover;
             border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            /* 【修正】画像そのものが途中で切れるのを防ぐ */
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
+
         .cat-name {
             font-weight: bold;
             font-size: 16px;
             margin: 10px 0 5px 0;
             color: #5c4331;
         }
+
         .cat-relation {
             font-size: 13px;
             color: #a0826c;
@@ -85,6 +113,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <h1>🐾 はいちゃんファミリーの部屋 🐾</h1>
@@ -137,7 +166,8 @@
                         <div class="cat-name">はいちゃんの子 2</div>
                         <div class="cat-relation">子ども（第2子）</div>
                     </td>
-                    <td></td><td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </table>
         </div>
@@ -173,4 +203,5 @@
     </div>
 
 </body>
+
 </html>

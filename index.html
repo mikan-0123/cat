@@ -85,9 +85,10 @@
 
         .cat-card img {
             width: 100%;
-            height: auto;
-            max-height: 180px;
-            object-fit: cover;
+            height: 180px;
+            /* 【変更】カードの高さを揃えるために固定 */
+            object-fit: contain;
+            /* 【変更】画像を切り抜かずに全体を収める */
             border-radius: 6px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
